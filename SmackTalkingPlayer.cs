@@ -6,7 +6,7 @@ namespace ShootingDice
     // TODO: Complete this class
 
     // A Player who shouts a taunt every time they roll dice
-    public class SmackTalkingPlayer
+    public class SmackTalkingPlayer : Player
     {
         private List<string> insultList = new List<string>()
         {
@@ -16,10 +16,12 @@ namespace ShootingDice
             "your mama sucks"
         };
 
-        public void roll()
+        public override int Roll()
         {
             int randomInsultIndex = new Random().Next(insultList.Count);
             Console.WriteLine(insultList[randomInsultIndex]);
+            return new Random().Next(DiceSize) + 1;
+
         }
     }
 }
