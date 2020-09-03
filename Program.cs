@@ -28,6 +28,16 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Console.WriteLine("-------------------");
+
+
+            UpperHalfPlayer upperHalfPlayer = new UpperHalfPlayer();
+            upperHalfPlayer.Name = "Upper Half Player";
+
+            upperHalfPlayer.Play(playerSmack);
+
+            Console.WriteLine("-------------------");
+
             CreativeSmackTalkingPlayer player2 = new CreativeSmackTalkingPlayer();
             player2.Name = "Creative Smack";
 
@@ -50,7 +60,7 @@ namespace ShootingDice
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, human, playerSmack, playerSore
+                player1, player2, player3, large, human, playerSmack, playerSore, upperHalfPlayer
             };
 
             PlayMany(players);
