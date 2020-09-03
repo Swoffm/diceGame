@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 namespace ShootingDice
 
 {
@@ -8,20 +7,12 @@ namespace ShootingDice
     // A Player who shouts a taunt every time they roll dice
     public class SmackTalkingPlayer : Player
     {
-        private List<string> insultList = new List<string>()
-        {
-            "boo",
-            "you suck",
-            "you're going to loose",
-            "your mama sucks"
-        };
+        private string insult = "you suck";
 
         public override int Roll()
         {
-            int randomInsultIndex = new Random().Next(insultList.Count);
-            Console.WriteLine(insultList[randomInsultIndex]);
-            return new Random().Next(DiceSize) + 1;
-
+            Console.WriteLine(insult);
+            return base.Roll();
         }
     }
 }
